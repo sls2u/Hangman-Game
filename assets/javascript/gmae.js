@@ -1,27 +1,53 @@
 //variables
 var selectedLetter="";
-var guessesSoFar = "y";
-var letterOptions = ["a","b","c","d","e","f","g","h","i","j"]
+var guessedLetter = ["a","b","c","d","e","f","g","h","i","j"];
+var letter = ["a","b","c","d","e","f","g","h","i","j"];
+
+
 
 //counter
-var guessesLeft = 26;
+var guessesLeft = 10;
 var wins = 0;
 var losses = 0;
+var i = 0;
 
 for (var i = 0; i < guessesLeft; i++) {
 
 }
+//want computer to generate random letter//
 
-function startGame() {
-  selectedLetter = letterOptions[Math.floor(Math.random()*letterOptions.length)];
-  console.log(selectedLetter);
-  console.log(guessesLeft);
+function randLetter() {
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+    var letter = letters[Math.floor(Math.random() * letters.length)];
+    console.log(letter);
+
 }
-
-function
-
+      $('#letter').html(randLetter())
 
 
+// want button to be pressed to show value of letter comp. generated letter//
+// function myFunction() {
+//   var= computerLetter;
+//     document.getElementById("").innerHTML = Math.random();
+//     return Math.random();
+//     console.log(computerLetter);
+// }
+  //
+  // function myFunction() {
+  //   document.getElementById('letterOptions');
+//   document.getElementById('computerLetter').innerHTML = Math.random()* letterOptions.length;
+//   return Math.random();
+//   // console.log(y);
+// })
+
+
+
+
+// function letterOptions() {
+//   guessedLetter = ('');
+//   console.log(guessedLetter);
+//
+// }
 
 
 
@@ -32,7 +58,9 @@ function
 
 
 
-startGame();
+
+
+
 
 
 

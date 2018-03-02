@@ -1,6 +1,6 @@
 //variables
 var selectedLetter="";
-var guessedLetter = ["a","b","c","d","e","f","g","h","i","j"];
+var pressedLetter = ["a","b","c","d","e","f","g","h","i","j"];
 var letter = ["a","b","c","d","e","f","g","h","i","j"];
 
 
@@ -24,14 +24,14 @@ function randLetter() {
 }
       $('#letter').html(randLetter())
 
-
 // want button to be pressed to show value of letter comp. generated letter//
-// function myFunction() {
-//   var= computerLetter;
-//     document.getElementById("").innerHTML = Math.random();
-//     return Math.random();
-//     console.log(computerLetter);
-// }
+function myFunction() {
+    var user = prompt("Please enter one letter from A-J");
+    if (user != null) {
+        document.getElementById("userInput").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+}
   //
   // function myFunction() {
   //   document.getElementById('letterOptions');

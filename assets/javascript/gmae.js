@@ -1,8 +1,17 @@
-//variables
-var selectedLetter="";
-var pressedLetter = ["a","b","c","d","e","f","g","h","i","j"];
-var letter = ["a","b","c","d","e","f","g","h","i","j"];
+//User makes choice
+//computer makes choice
+//capture choices
+//compare choices to determine win/loss/or guess Again
+//display result to the user
 
+
+
+//variables
+// var selectedLetter="";
+var targetLetter//var will be defined later on
+var guessedLetter //array for user to choose letter
+var letters = ["a","b","c","d","e","f","g","h","i","j"];
+//
 
 
 //counter
@@ -11,28 +20,87 @@ var wins = 0;
 var losses = 0;
 var i = 0;
 
-for (var i = 0; i < guessesLeft; i++) {
+
+//Display start screen info
+function startGame() {//startgame
+  guessesLeft = 10;//asigns how many guesses to start with
+  targetLetter =  letters[Math.floor(Math.random() * letters.length)];//computer choses letter at random to be guessed
+  guessedLetter = [];//clear out all letters guessed
+  console.log(targetLetter);
+
+  counter();//calling counter functions
+
 
 }
-//want computer to generate random letter//
 
-function randLetter() {
-    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
-    var letter = letters[Math.floor(Math.random() * letters.length)];
-    console.log(letter);
+function updateCounter() {
+  wins= wins ++
+  document.getElementById("wins").innerHTML = "Wins " + wins
+
+  losses = losses ++
+  document.getElementByID("losses").innerHTML = "losses " + losses
 
 }
-      $('#letter').html(randLetter())
+// function startScreen() {
+//     // var node = document.createElement("LI");
+//     var wins = document.createTextNode("wins");
+//     // node.appendChild(textnode);
+//     document.getElementById("scoreboard").appendChild(wins);
+//
+// }
 
-// want button to be pressed to show value of letter comp. generated letter//
-function myFunction() {
-    var user = prompt("Please enter one letter from A-J");
-    if (user != null) {
-        document.getElementById("userInput").innerHTML =
-        "Hello " + person + "! How are you today?";
-    }
-}
-  //
+
+//
+
+
+//alert pop up when user presses button
+
+
+
+// document.onkeyup = function() {
+//   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();//taking in user guess
+//   console.log(userGuess);
+//
+//
+//   var computerGuess = letters[Math.floor(Math.random() * letters.length)];//function for computer pick random letter
+//
+// //   console.log(letter);
+//
+// if (userGuess == computerGuess) {
+//   wins i++;
+//   alert("You\ve guessed correctly" + "Good Job!");
+//   guessesLeft = 10; //count stays the same
+//
+//
+// // }
+//
+//
+//
+//
+//
+//
+// // }
+// //want computer to generate random letter//
+//
+// function randLetter() {
+//     var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+//     var letter = letters[Math.floor(Math.random() * letters.length)];
+//     console.log(letter);
+//
+// }
+//       $('#letter').html(randLetter())
+//
+// // want enter to start game and box to prompt so user can input letter.//
+// function myFunction() {
+//     var user = prompt("Please enter one letter from A-J");
+//     var guess = [];
+//     if (guess!== letter) {
+//       msg = "You Win";
+//     } else {
+//       msg = "Try Again";
+//     }
+// }
+//   //
   // function myFunction() {
   //   document.getElementById('letterOptions');
 //   document.getElementById('computerLetter').innerHTML = Math.random()* letterOptions.length;

@@ -8,8 +8,8 @@
 
 //variables
 // var selectedLetter="";
-var targetLetter//var will be defined later on
-var guessedLetter //array for user to choose letter
+var targetLetter ;//var will be defined later on
+var guessedLetter ; //array for user to choose letter
 var letters = ["a","b","c","d","e","f","g","h","i","j"];
 //
 
@@ -23,34 +23,35 @@ var i = 0;
 
 //Display start screen info
 function startGame() {//startgame
-  guessesLeft = 10;//asigns how many guesses to start with
+  guessesLeft = 10;//assigns how many guesses to start with
   targetLetter =  letters[Math.floor(Math.random() * letters.length)];//computer choses letter at random to be guessed
   guessedLetter = [];//clear out all letters guessed
   console.log(targetLetter);
 
-  // updateCounter();//calling counter functions
+
+  updatePage();//calling counter functions
 
 }
 
-function updateCounter() {//named updateCounter function to keep track of wins and losses
+function updatePage() {//named updateCounter function to keep track of wins and losses
     document.getElementById("wins").innerHTML = "Wins " + wins //documenting if user presses correct letter  pull from html id
 
-    document.getElementByID("losses").innerHTML = "losses " + losses; //document user losess pull from html id
+    document.getElementById("losses").innerHTML = "Losses " + losses; //document user losess pull from html id
 
-    document.getElementByID("guesses so far").innerHTML = "guesses so far" + "guesses so far"; // keep track of how many guesses pull from html id
-
+    document.getElementById("guessesSoFar").innerHTML = "guessesSoFar" + guessesSoFar; // keep track of how many guesses pull from html id
 
 }
-// function startScreen() {
-//     // var node = document.createElement("LI");
-//     var wins = document.createTextNode("wins");
-//     // node.appendChild(textnode);
-//     document.getElementById("scoreboard").appendChild(wins);
-//
-// }
+function updatePage(letters) { //letter called when a guess happens
+    guessesLeft = guessedLetter.push(letters) - 1; //adding new item to the end of an array, and returning the new length.
 
 
-//alert pop up when user presses button
+ }
+
+function updatePage(letters) {//letter called when a guess happens
+  guessessofar = guessedLetter.push(letters) + 1;  //adding new item to the end of an array, and returning the new length
+
+  updatePage();
+}
 
 
 
@@ -97,22 +98,6 @@ function updateCounter() {//named updateCounter function to keep track of wins a
 //       msg = "Try Again";
 //     }
 // }
-//   //
-  // function myFunction() {
-  //   document.getElementById('letterOptions');
-//   document.getElementById('computerLetter').innerHTML = Math.random()* letterOptions.length;
-//   return Math.random();
-//   // console.log(y);
-// })
-
-
-
-
-// function letterOptions() {
-//   guessedLetter = ('');
-//   console.log(guessedLetter);
-//
-// }
 
 
 
@@ -129,22 +114,6 @@ function updateCounter() {//named updateCounter function to keep track of wins a
 
 
 
-
-// var person = "player";
-// console.log (person);
-//
-// var alreadyGuessed = []
-// var wordLength =[]
-//
-// var wordChosen =[]
-//
-// var counter = 'x'--1;
-//
-// var wordBank = new Array;
-// var currentLetterGuessed;
-//
-//
-//
 
 
 

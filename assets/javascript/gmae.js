@@ -28,17 +28,17 @@ function startGame() {//startgame
   guessedLetter = [];//clear out all letters guessed
   console.log(targetLetter);
 
-  counter();//calling counter functions
-
+  // updateCounter();//calling counter functions
 
 }
 
-function updateCounter() {
-  wins= wins ++
-  document.getElementById("wins").innerHTML = "Wins " + wins
+function updateCounter() {//named updateCounter function to keep track of wins and losses
+    document.getElementById("wins").innerHTML = "Wins " + wins //documenting if user presses correct letter  pull from html id
 
-  losses = losses ++
-  document.getElementByID("losses").innerHTML = "losses " + losses
+    document.getElementByID("losses").innerHTML = "losses " + losses; //document user losess pull from html id
+
+    document.getElementByID("guesses so far").innerHTML = "guesses so far" + "guesses so far"; // keep track of how many guesses pull from html id
+
 
 }
 // function startScreen() {
@@ -48,9 +48,6 @@ function updateCounter() {
 //     document.getElementById("scoreboard").appendChild(wins);
 //
 // }
-
-
-//
 
 
 //alert pop up when user presses button

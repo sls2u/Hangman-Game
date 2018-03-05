@@ -20,13 +20,14 @@ var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']; //list
 document.onkeyup = function(event) {
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase(); //factoring random user guess
   console.log(userGuess)
+  //directing computer to pick random letters using math.random function
   var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]; //computer function that selects random letter
   guessesSoFar.push(userGuess); //adding user guess to guesses so far
 
 //logic conditionals for score keeping
   if (userGuess == computerGuess) { //user guess equals to computer guess
     wins++;//increase win by +1
-    alert('You are Psychic!')
+    alert('You are Psychic!') //Either you are a fortune teller and should play the loto or you were lucky
     guessesLeft = 13; //reseting the guesses back to 13 to start again
     guessesSoFar.length = 0; //empty current string back to 0 (reset)
   }
@@ -35,11 +36,15 @@ document.onkeyup = function(event) {
   alert('You lost. Please play again.')
   guessesLeft = 13; //reseting the guesses back to 13 to start again
   guessesSoFar.length = 0;//empty current string back to 0 (reset)
-} else (userGuess !== computerGuess) {//userGuess does not match the computer guess
+  }
+
+  else if (userGuess !== computerGuess) {//userGuess does not match the computer guess
   guessesLeft--; //counting down the guesses 1 at a time
-}
+  alert('Keep trying!')
+  }
+
 // Taking the conditioanls and displaying in HTML
-var html = "<h1>The Psychic Game</h1>" +
+  var html = "<h1>The Psychic Game</h1>" +
   "<p>Guess what letter I'm thinking of!</p>" +
   "<p>Total Wins: " +
   wins +
